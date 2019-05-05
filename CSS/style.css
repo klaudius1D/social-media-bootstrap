@@ -6,6 +6,13 @@ body {
 .navbar {
     border-bottom: #008ed6 3px solid;
 }
+.navbar-toggler {
+    border-color: #008ed6;
+}
+#main-nav .fas {
+    color: #008ed6;
+}
+
 #home-section {
     background: url(../img/home.jpg);
     background-repeat: no-repeat;

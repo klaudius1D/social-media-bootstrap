@@ -1,26 +1,22 @@
 
 //Get the current year for the copyright
-$('#year').text(newDate().getFullYear());
+$('#year').text(new Date().getFullYear());
 
+//Initialize ScrollSpy
+$('body').scrollspy({ target: '#main-nav' });
 
-$(document).ready(function () {
+//Smooth Scroll
+$("#main-nav a").on('click', function (event) {
+    if (this.hash !== "") {
+        event.preventDefault();
 
-    //Initiate ScrollSpy
-    $('body').scrollSpy({ target: '#main-nav' });
+        const hash = this.hash;
 
-    //Smooth Scroll
-    $("#main-nav a").on('click', function (event) {
-        if (this.hash !== "") {
-            event.preventDefault();
+        $('html, body').animate({
+            scrollTop: $(hash).offset().top
+        }, 500, function () {
 
-            const hash = this.hash;
-
-            $('html, body').animate({
-                scrollTop: $(hash).offset().top
-            }, 800, function () {
-
-                window.location.hash = hash;
-            });
-        }
-    });
+            window.location.hash = hash;
+        });
+    }
 });
